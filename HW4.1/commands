@@ -1,0 +1,4 @@
+//merge file
+hadoop fs -cat /mnt/output/part* > allfile
+//sort the merged file
+sort -t $'\t' -k2nr -k1 allfile > sorted

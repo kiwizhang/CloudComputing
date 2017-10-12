@@ -1,0 +1,93 @@
+#################################
+Step 2: language model
+#################################
+
+# jar using command line
+$ cd ~
+$ mkdir wordcount_classes
+$ cp /usr/share/aws/emr/hadoop-state-pusher/lib/hadoop-common-2.4.0-amzn-3.jar .
+$ cp /usr/share/aws/emr/hadoop-state-pusher/lib/hadoop-mapreduce-client-core-2.4.0-amzn-3.jar .
+$ cp /usr/share/aws/emr/hadoop-state-pusher/lib/hadoop-mapreduce-client-common-2.4.0-amzn-3.jar .
+$ javac -classpath hadoop-common-2.4.0-amzn-3.jar:hadoop-mapreduce-client-core-2.4.0-amzn-3.jar:hadoop-mapreduce-client-common-2.4.0-amzn-3.jar -d wordcount_classes WordCount.java
+$ jar -cvf wordcount.jar -C wordcount_classes/ .
+
+----------------------------
+LangModel.java
+----------------------------
+
+# example
+http://hbase.apache.org/0.94/book/mapreduce.example.html
+http://sujee.net/2011/04/10/hbase-map-reduce-example/
+http://www.programcreek.com/java-api-examples/index.php?source_dir=cloud-bigtable-examples-master/java/wordcount-mapreduce/src/main/java/com.example.bigtable.sample/WordCountHBase.java
+
+# pass parameters to Mapper and Reducer
+http://www.thecloudavenue.com/2011/11/passing-parameters-to-mappers-and.html
+
+----------------------------
+MapReduce: from file to hbase
+----------------------------
+
+# download from s3
+aws s3 cp s3://lli2/ngramsorted ./
+
+# load file to hadoop
+hadoop fs -ls /
+
+hadoop fs -mkdir /input_lang
+
+hadoop fs -put ngramsorted /input_lang
+
+# create table in hbase
+hbase shell
+create 'lang','cf'
+exit
+
+# execute MapReduce
+hadoop jar langModel.jar /input_lang lang 2 5
+
+#################################
+Step 3: front end
+#################################
+
+----------------------------
+HBase
+----------------------------
+
+# start REST server of HBase
+hbase-daemon.sh start rest
+
+# restart Apache
+sudo service httpd restart
+
+----------------------------
+Front End
+----------------------------
+
+# download PHP code
+sudo su
+cd ~
+wget https://s3.amazonaws.com/15-319-s16/proj4_web.tgz
+cd /var/www/html
+sudo tar xzf ~/proj4_web.tgz
+
+# add permission
+sudo chmod -R 777 /var/www/html/
+
+# check if website is running
+http://ec2-54-152-208-167.compute-1.amazonaws.com/proj4_web/info.php
+
+# modify PHP code
+$tableName="lang";
+$columnFamily="cf";
+$url = "ec2-54-152-208-167.compute-1.amazonaws.com:8080/".$tableName."/".urlencode($searchTerm)."?v=1";
+
+# type in pharses to check working or not
+http://ec2-54-152-208-167.compute-1.amazonaws.com/proj4_web/
+
+----------------------------
+Submit
+----------------------------
+
+# submit
+Please copy ALL MapReduce code for steps 1 and 2 (as well as the code or command for merging and sorting results and inserting into Hbase) to this folder before making your final submission. Not doing so will lead to 100% penalty in this project.
+./submitter

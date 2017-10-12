@@ -1,0 +1,17 @@
+The results of this run are : 
+{
+ "answer0": "output file created",
+ "answer1": "6813219",
+ "answer2": "25145586",
+ "answer3": "1665424",
+ "answer4": "",
+ "answer5": "16",
+ "answer6": "1408",
+ "answer7": "",
+ "answer8": "6971",
+ "answer9": ""
+}
+
+If you feel these values are correct please run:
+./submitter -a andrewID -l language <python,bash,java>
+You can use ./submitter -h to view the usage at any time.

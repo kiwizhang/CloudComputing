@@ -1,0 +1,31 @@
+# download submitter
+wget https://s3.amazonaws.com/15-319-s16/task2-follower.tgz
+tar xzf task2-follower.tgz
+
+# download sbt
+wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.11/sbt-0.13.11.zip
+unzip sbt-0.13.11.zip
+
+# cd task2
+
+# vim task2.sbt (under /task2)
+name := "task2"
+version := "1.0"
+scalaVersion := "2.10.4"
+libraryDependencies += "org.apache.spark" %% "spark-core" % "1.5.2"
+
+# mkdir
+mkdir src/main
+mkdir src/main/scala
+
+# vim src/main/scala/Follower.scala
+
+# package (under /task2)
+/mnt/sbt/bin/sbt package
+mv target/scala-2.10/PageRank_2.10-1.0.jar ./PageRank.jar
+
+# spark submit
+spark-submit —-class Follower follower.jar
+
+# submit
+chmod +x follower-submitter

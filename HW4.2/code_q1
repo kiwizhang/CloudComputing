@@ -1,0 +1,14 @@
+//Count number of vertices
+val textFile = sc.textFile("hdfs:///input/TwitterGraph.txt")
+
+val counts = textFile.flatMap(line => line.split("\t")).map(word => (word, 1)).reduceByKey(_ + _)
+
+counts.count()
+
+
+//Count number of edges
+val textFile = sc.textFile("hdfs:///input/TwitterGraph.txt")
+
+val counts = textFile.flatMap(line => line.split("\n")).map(word => (word, 1)).reduceByKey(_ + _)
+
+counts.count()

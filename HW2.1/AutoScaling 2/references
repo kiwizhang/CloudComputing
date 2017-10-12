@@ -1,0 +1,9 @@
+1. https://eucalyptus.atlassian.net/secure/attachment/14317/TestAutoScalingTerminateInstances.java
+2. http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/ec2/AmazonEC2.html
+3. http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/ec2/model/TerminateInstancesRequest.html
+4. http://www.programcreek.com/java-api-examples/index.php?api=com.amazonaws.services.ec2.model.TerminateInstancesRequest
+5. https://github.com/aws/aws-sdk-java/blob/master/src/samples/AmazonEC2SpotInstances-Advanced/InlineGettingStartedCodeSampleApp.java
+6. http://www.programcreek.com/java-api-examples/index.php?source_dir=cmn-project-master/cmn/src/main/java/core/aws/client/AutoScaling.java
+7. http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/run-instance.html
+
+Discussed with nahan

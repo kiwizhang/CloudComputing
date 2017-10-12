@@ -1,0 +1,205 @@
+$                       Select
+%in%                    Match a column with given values.
+Column-class            S4 class that represents a DataFrame column
+DataFrame-class         S4 class that represents a DataFrame
+GroupedData-class       S4 class that represents a GroupedData
+PipelineModel-class     S4 class that represents a PipelineModel
+[[                      Subset
+abs                     abs
+acos                    acos
+add_months              add_months
+agg                     Summarize data across columns
+alias                   alias
+approxCountDistinct     approxCountDistinct
+arrange                 Arrange
+ascii                   ascii
+asin                    asin
+atan                    atan
+atan2                   atan2
+avg                     avg
+base64                  base64
+between                 between
+bin                     bin
+bitwiseNOT              bitwiseNOT
+cache                   Cache
+cacheTable              Cache Table
+cancelJobGroup          Cancel active jobs for the specified group
+cast                    Casts the column to a different data type.
+cbrt                    cbrt
+ceil                    ceil
+clearCache              Clear Cache
+clearJobGroup           Clear current job group ID and its description
+collect                 Collects all the elements of a Spark DataFrame
+                        and coerces them into an R data.frame.
+columns                 Column names
+concat                  concat
+concat_ws               concat_ws
+conv                    conv
+cos                     cos
+cosh                    cosh
+count                   Count
+countDistinct           Count Distinct
+crc32                   crc32
+createDataFrame         Create a DataFrame from an RDD
+createExternalTable     Create an external table
+crosstab                crosstab
+date_add                date_add
+date_format             date_format
+date_sub                date_sub
+datediff                datediff
+dayofmonth              dayofmonth
+dayofyear               dayofyear
+describe                describe
+dim                     Returns the dimentions (number of rows and
+                        columns) of a DataFrame
+distinct                Distinct
+dropTempTable           Drop Temporary Table
+dropna                  dropna
+dtypes                  DataTypes
+except                  except
+exp                     exp
+explain                 Explain
+explode                 explode
+expm1                   expm1
+expr                    expr
+factorial               factorial
+filter                  Filter
+first                   Return the first row of a DataFrame
+floor                   floor
+format_number           format_number
+format_string           format_string
+from_unixtime           from_unixtime
+from_utc_timestamp      from_utc_timestamp
+glm                     Fits a generalized linear model
+greatest                greatest
+groupBy                 GroupBy
+hashCode                Compute the hashCode of an object
+head                    Head
+hex                     hex
+hour                    hour
+hypot                   hypot
+ifelse                  ifelse
+infer_type              infer the SQL type
+initcap                 initcap
+insertInto              insertInto
+instr                   instr
+intersect               Intersect
+isLocal                 isLocal
+isNaN                   isNaN
+join                    Join
+jsonFile                Create a DataFrame from a JSON file.
+last                    last
+last_day                last_day
+least                   least
+length                  length
+levenshtein             levenshtein
+limit                   Limit
+lit                     Creates a 'Column' of literal value.
+locate                  locate
+log                     log
+log10                   log10
+log1p                   log1p
+log2                    log2
+lower                   lower
+lpad                    lpad
+ltrim                   ltrim
+max                     max
+md5                     md5
+mean                    mean
+merge                   rdname merge
+min                     min
+minute                  minute
+month                   month
+months_between          months_between
+nanvl                   nanvl
+ncol                    Returns the number of columns in a DataFrame
+negate                  negate
+next_day                next_day
+nrow                    Number of rows for a DataFrame
+otherwise               otherwise
+parquetFile             Create a DataFrame from a Parquet file.
+persist                 Persist
+pmod                    pmod
+predict,PipelineModel-method
+                        Make predictions from a model
+print.jobj              Print a JVM object reference.
+print.structField       Print a Spark StructField.
+print.structType        Print a Spark StructType.
+printSchema             Print Schema of a DataFrame
+quarter                 quarter
+rand                    rand
+randn                   randn
+rbind                   Union two or more DataFrames
+read.df                 Load an DataFrame
+regexp_extract          regexp_extract
+regexp_replace          regexp_replace
+registerTempTable       Register Temporary Table
+repartition             Repartition
+reverse                 reverse
+rint                    rint
+round                   round
+rpad                    rpad
+rtrim                   rtrim
+sample,DataFrame,logical,numeric-method
+                        Sample
+saveAsParquetFile       saveAsParquetFile
+saveAsTable             saveAsTable
+schema                  Get schema object
+second                  second
+selectExpr              SelectExpr
+setJobGroup             Assigns a group ID to all the jobs started by
+                        this thread until the group ID is set to a
+                        different value or cleared.
+sha1                    sha1
+sha2                    sha2
+shiftLeft               shiftLeft
+shiftRight              shiftRight
+shiftRightUnsigned      shiftRightUnsigned
+show                    show
+showDF                  showDF
+signum                  signum
+sin                     sin
+sinh                    sinh
+size                    size
+soundex                 soundex
+sparkR.init             Initialize a new Spark Context.
+sparkR.stop             Stop the Spark context.
+sparkRHive.init         Initialize a new HiveContext.
+sparkRSQL.init          Initialize a new SQLContext.
+sql                     SQL Query
+sqrt                    sqrt
+structField             structField
+structType              structType
+substr                  substr
+substring_index         substring_index
+sum                     sum
+sumDistinct             sumDistinct
+summary                 Summary
+table                   Create a DataFrame from a SparkSQL Table
+tableNames              Table Names
+tables                  Tables
+take                    Take the first NUM rows of a DataFrame and
+                        return a the results as a data.frame
+tan                     tan
+tanh                    tanh
+toDegrees               toDegrees
+toRadians               toRadians
+to_date                 to_date
+to_utc_timestamp        to_utc_timestamp
+translate               translate
+trim                    trim
+unbase64                unbase64
+uncacheTable            Uncache Table
+unhex                   unhex
+unionAll                UnionAll
+unique                  Distinct rows in a DataFrame
+unix_timestamp          unix_timestamp
+unpersist               Unpersist
+upper                   upper
+weekofyear              weekofyear
+when                    when
+withColumn              WithColumn
+withColumnRenamed       WithColumnRenamed
+write.df                Save the contents of the DataFrame to a data
+                        source
+year                    year

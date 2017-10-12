@@ -1,0 +1,43 @@
+server{
+	upstream shard1 {
+		server 54.152.146.77:8080;
+		
+	}
+
+	upstream shard2 {
+		
+	    server 54.87.197.228:8080; 
+	}
+
+
+
+	upstream project {
+		    least_conn;
+	        server 54.152.146.77:8080;
+	        server 54.87.197.228:8080;
+	}
+
+	server {
+	        listen 80;
+
+	        location /q1 {
+	        	proxy_pass http://project;
+	        }
+	        location /q2 {
+	        	proxy_pass http://project;
+	        }
+	        location /q3 {
+	        	proxy_pass http://project;
+	        }
+	        location /q4 {
+	        	if ($args ~ tweetid = ([^\&]*)(1|2|3|4|5)&) {
+	        		proxy_pass http://shard1;
+	        	}
+	        	if ($args ~ tweetid = ([^\&]*)(6|7|8|9|0)&) {
+	        		proxy_pass http://shard2;
+	        	}
+	        	
+	        }
+
+	}
+}

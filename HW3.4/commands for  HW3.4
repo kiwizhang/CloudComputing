@@ -1,0 +1,34 @@
+
+
+登陆Mysql：
+mysql -h flykiwi.clnmtgvkqmer.us-east-1.rds.amazonaws.com -u flykiwi -ppainting
+
+
+记得先进 sudo vi /etc/mysql/my.cnf
+在下面加上：
+[mysqld]
+local-infile 
+
+[mysql]
+local-infile 
+
+
+create table:
+CREATE TABLE userprofile (UserId VARCHAR(20), UserName VARCHAR(255), url VARCHAR(255));
+
+
+
+Load csv to mysql:
+
+LOAD DATA LOCAL INFILE 'users.csv'
+INTO TABLE users
+FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+
+LOAD DATA LOCAL INFILE 'userinfo.csv'
+INTO TABLE userprofile
+FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+LINES TERMINATED BY '\n';

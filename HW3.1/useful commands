@@ -1,0 +1,24 @@
+LOAD DATA LOCAL INFILE 'users.csv'
+INTO TABLE users
+FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+
+登陆mysql:
+mysql -u root -pdb15319root song_db
+
+改权限
+mysql -u root -pdb15319root --local-infile=1
+
+
+CREATE INDEX indexName ON songs(duration);
+
+
+SELECT count(*) FROM songs WHERE (
+					title LIKE BINARY '%The Beatles%' OR
+					`release` LIKE BINARY '%The Beatles%' OR
+					artist_name LIKE BINARY '%The Beatles%');
+
+
+SELECT count(*) FROM songs WHERE title LIKE BINARY'%The Beatles%' OR `release` LIKE BINARY '%The Beatles%' OR artist_name LIKE BINARY '%The Beatles%';

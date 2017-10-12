@@ -1,0 +1,81 @@
+
+zhangjiweikiwi.clnmtgvkqmer.us-east-1.rds.amazonaws.com:3306
+
+
+
+kiwifly.clnmtgvkqmer.us-east-1.rds.amazonaws.com
+
+flykiwi.clnmtgvkqmer.us-east-1.rds.amazonaws.com
+Login to MySql
+
+mysql -h flykiwi.clnmtgvkqmer.us-east-1.rds.amazonaws.com -u flykiwi -ppainting
+
+mysql -h kiwifly.clnmtgvkqmer.us-east-1.rds.amazonaws.com -u kiwifly -p3painting
+
+grant access
+
+what works:
+grant all privileges on flykiwi.* to flykiwi@'%' identified by 'painting';
+
+grant all privileges on dbname.* to zhangjiweikiwi@'%' identified by ‘pwd';
+
+other references:
+
+GRANT ALL ON zhangjiweikiwi.* TO ‘zhangjiweikiwi’@'zhangjiweikiwi.clnmtgvkqmer.us-east-1.rds.amazonaws.com';
+
+GRANTALL PRIVILEGES ON`zhangjiweikiwi`.*TO'zhangjiweikiwi'@'zhangjiweikiwi.clnmtgvkqmer.us-east-1.rds.amazonaws.com' IDENTIFIED BY'[password]’WITHGRANTOPTION;
+
+GRANT ALL ON *.* TO “zhangjiweikiwi"@"192.168.1.5”;
+
+grant all privileges on zhangjiweikiwi.* to zhangjiweikiwi@'%' identified by ‘3painting’
+
+LOAD DATA LOCAL INFILE 'users.csv'
+INTO TABLE users
+FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+LINES TERMINATED BY '\n’;
+
+CREATE TABLE users (UserId VARCHAR(20), password VARCHAR(20));
+
+CREATE TABLE userprofile (UserId VARCHAR(20), UserName VARCHAR(255), url VARCHAR(255));
+
+HBase:
+
+hadoop fs -mkdir /kiwi
+
+hadoop fs -mkdir /kiwi/csv
+
+hadoop fs -put /home/hadoop/T2/newlinks /kiwi/csv/
+
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator="," -Dimporttsv.bulk.output=/hfile_hw343 -Dimporttsv.columns=HBASE_ROW_KEY,data:userid,data:follower links /kiwi/csv/newlinks
+
+hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /hfile_hw343 newlinks
+
+MongoDB
+
+mongoimport --db post --collection posts --drop --file posts.json
+
+
+Sorting Commands:
+cat links.csv |  sort -t',' -k2n -k1n > sorted links
+
+
+
+hadoop fs -put /home/hadoop/T2/finalreverselinks /kiwi/csv/
+hadoop fs -put /home/hadoop/T2/firstfinallinks /kiwi/csv/
+
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator="&" -Dimporttsv.bulk.output=/hfile_hw353 -Dimporttsv.columns=HBASE_ROW_KEY,data:userid,data:follower firstfinallinks /kiwi/csv/firstfinallinks
+hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /hfile_hw353 firstfinallinks
+
+
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator="&" -Dimporttsv.bulk.output=/hfile_hw355 -Dimporttsv.columns=HBASE_ROW_KEY,data:userid,data:followee reverselinks /kiwi/csv/finalreverselinks
+hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /hfile_hw355 finalreverselinks
+
+
+
+
+
+create index:
+db.collection.createIndex( { orderDate: 1 } )
+db.posts.createIndex({"uid": 1})
+db.posts.find({"uid":"15619"});

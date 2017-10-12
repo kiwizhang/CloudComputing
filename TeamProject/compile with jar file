@@ -1,0 +1,5 @@
+compile with jar file
+javac -classpath json-simple-1.1.jar Mapper1.ja
+
+run with jar file
+java -classpath .:json-simple-1.1.jar Mapper1

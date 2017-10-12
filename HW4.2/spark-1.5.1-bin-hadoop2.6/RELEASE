@@ -1,0 +1,2 @@
+Spark 1.5.1 built for Hadoop 2.6.0
+Build flags: -Psparkr -Phadoop-2.6 -Phive -Phive-thriftserver -Pyarn -DzincPort=3034

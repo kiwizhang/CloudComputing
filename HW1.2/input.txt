@@ -1,0 +1,64 @@
+IN A MAJOR breakthrough for artificial intelligence, a computing system developed by Google researchers in Great Britain has beaten a top human player at the game of Go, the ancient Eastern contest of strategy and intuition that has bedeviled AI experts for decades.
+
+Machines have topped the best humans at most games held up as measures of human intellect, including chess, Scrabble, Othello, even Jeopardy!. But with Go—a 2,500-year-old game that’s exponentially more complex than chess—human grandmasters have maintained an edge over even the most agile computing systems. Earlier this month, top AI experts outside of Google questioned whether a breakthrough could occur anytime soon, and as recently as last year, many believed another decade would pass before a machine could beat the top humans.
+
+But Google has done just that. “It happened faster than I thought,” says Rémi Coulom, the French researcher behind what was previously the world’s top artificially intelligent Go player.
+
+In theory, such training only produces a system that's as good as the best humans---not better. So researchers matched their AI system against itself.
+Researchers at DeepMind—a self-professed “Apollo program for AI” that Google acquired in 2014—staged this machine-versus-man contest in October, at the company’s offices in London. The DeepMind system, dubbed AlphaGo, matched its artificial wits against Fan Hui, Europe’s reigning Go champion, and the AI system went undefeated in five games witnessed by an editor from the journal Nature and an arbiter representing the British Go Federation. “It was one of the most exciting moments in my career, both as a researcher and as an editor,” the Nature editor, Dr. Tanguy Chouard, said during a conference call with reporters on Tuesday.
+
+This morning, Nature published a paper describing DeepMind’s system, which makes clever use of, among other techniques, an increasingly important AI technology called deep learning. Using a vast collection of Go moves from expert players—about 30 million moves in total—DeepMind researchers trained their system to play Go on its own. But this was merely a first step. In theory, such training only produces a system as good as the best humans. To beat the best, the researchers then matched their system against itself. This allowed them to generate a new collection of moves they could then use to train a new AI player that could top a grandmaster.
+
+“The most significant aspect of all this…is that AlphaGo isn’t just an expert system, built with handcrafted rules,” says Demis Hassabis, who oversees DeepMind. “Instead, it uses general machine-learning techniques how to win at Go.”
+
+'Go is implicit. It's all pattern matching. But that's what deep learning does very well.'
+DEMIS HASSABIS, DEEPMIND
+The win is more than a novelty. Online services like Google, Facebook, and Microsoft, already use deep learning to identify images, recognize spoken words, and understand natural language. DeepMind’s techniques, which combine deep learning with a technology called reinforcement learning and other methods, point the way to a future where real-world robots can learn to perform physical tasks and respond to their environment. “It’s a natural fit for robotics,” Hassabis says.
+
+He also believes these methods can accelerate scientific research. He envisions scientists working alongside artificially intelligent systems that can home in on areas of research likely to be fruitful. “The system could process much larger volumes of data and surface the structural insight to the human expert in a way that is much more efficient—or maybe not possible for the human expert,” Hassabis explains. “The system could even suggest a way forward that might point the human expert to a breakthrough.”
+
+But at the moment, Go remains his primary concern. After beating a grandmaster behind closed doors, Hassabis and his team aim to beat one of the world’s top players in a public forum. In mid-March, in South Korea, AlphaGo will challenge Lee Sedol, who holds more international titles than all but one player and has won the most over the past decade. Hassabis sees him as “the Roger Federer of the Go world.”
+
+Judging by Appearances
+In early 2014, Coulom’s Go-playing program, Crazystone, challenged grandmaster Norimoto Yoda at a tournament in Japan. And it won. But the win came with caveat: the machine had a four-move head start, a significant advantage. At the time, Coulom predicted that it would be another 10 years before machines beat the best players without a head start.
+
+The challenge lies in the nature of the game. Even the most powerful supercomputers lack the processing power to analyze the results of every possible move in any reasonable amount of time. When Deep Blue topped world chess champion Gary Kasparov in 1997, it did so with what’s called brute force. In essence, IBM’s supercomputer analyzed the outcome of every possible move, looking further ahead than any human possibly could. That’s simply not possible with Go. In chess, at any given turn, there are an average 35 possible moves. With Go—in which two players compete with polished stones on 19-by-19 grid—there are 250. And each of those 250 has another 250, and so on. As Hassabis points out, there are more possible positions on a Go board than atoms in the universe.
+
+Players will tell you to make moves based on the general appearance of the board, not by closely analyzing how each move will play out.
+Using a technique called a Monte Carlo tree search, systems like Crazystone can look pretty far ahead. And in conjunction with other techniques, they can pare down the field of possibilities they must analyze. In the end, they can beat some talented players—but not the best. Among grandmasters, moves are rather intuitive. Players will tell you to make moves based on the general appearance of the board, not by closely analyzing how each move might play out. “Good positions look good,” says Hassabis, himself a Go player. “It seems to follow some kind of aesthetic. That’s why it has been such a fascinating game for thousands of years.”
+
+But as 2014 gave way to 2015, several AI experts, including researchers at the University of Edinburgh and Facebook as well as the team at DeepMind, started applying deep learning to the Go problem. The idea was the technology could mimic the human intuition that Go requires. “Go is implicit. It’s all pattern matching,” says Hassabis. “But that’s what deep learning does very well.”
+
+Self-Reinforcing
+Deep learning relies on what are called neural networks—networks of hardware and software that approximate the web of neurons in the human brain. These networks don’t operate by brute force or handcrafted rules. They analyze large amounts of data in an effort to “learn” a particular task. Feed enough photos of a wombat into a neural net, and it can learn to identify a wombat. Feed it enough spoken words, and it can learn to recognize what you say. Feed it enough Go moves, and it can learn to play Go.
+
+MORE AI
+ Google and Facebook Race to Solve the Ancient Game of Go With AI
+Google and Facebook Race to Solve the Ancient Game of Go With AI
+ The Mystery of Go, the Ancient Game That Computers Still Can't Win
+The Mystery of Go, the Ancient Game That Computers Still Can’t Win
+ Google Just Open Sourced TensorFlow, Its Artificial Intelligence Engine
+Google Just Open Sourced TensorFlow, Its Artificial Intelligence Engine
+At DeepMind and Edinburgh and Facebook, researchers hoped neural networks could master Go by “looking” at board positions, much like a human plays. As Facebook showed in a recent research paper, the technique works quite well. By pairing deep learning and the Monte Carlo Tree method, Facebook beat some human players—though not Crazystone and other top creations.
+
+But DeepMind pushes this idea much further. After training on 30 million human moves, a DeepMind neural net could predict the next human move about 57 percent of the time—an impressive number (the previous record was 44 percent). Then Hassabis and team matched this neural net against slightly different versions of itself through what’s called reinforcement learning. Essentially, as the neural nets play each other, the system tracks which move brings the most reward—the most territory on the board. Over time, it gets better and better at recognizing which moves will work and which won’t.
+
+“AlphaGo learned to discover new strategies for itself, by playing millions of games between its neural networks, against themselves, and gradually improving,” says DeepMind researcher David Silver.
+
+According to Silver, this allowed AlphaGo to top other Go-playing AI systems, including Crazystone. Then the researchers fed the results into a second neural network. Grabbing the moves suggested by the first, it uses many of the same techniques to look ahead to the result of each move. This is similar to what older systems like Deep Blue would do with chess, except that the system is learning as it goes along, as it analyzes more data—not exploring every possible outcome through brute force. In this way, AlphaGo learned to beat not only existing AI programs but a top human as well.
+
+Dedicated Silicon
+Like most state-of-the-art neural networks, DeepMind’s system runs atop machines equipped with graphics processing units, or GPUs. These chips were originally designed to render images for games and other graphics-intensive applications. But as it turns out, they’re also well suited to deep learning. Hassabis says DeepMind’s system works pretty well on a single computer equipped with a decent number of GPU chips, but for the match against Fan Hui, the researchers used a larger network of computers that spanned about 170 GPU cards and 1,200 standard processors, or CPUs. This larger computer network both trained the system and played the actual game, drawing on the results of the training.
+
+When AlphaGo plays the world champion in South Korea, Hassabiss team will use the same setup, though they’re constantly working to improve it. That means they’ll need an Internet connection to play Lee Sedol. “We’re laying down our own fiber,” Hassabis says.
+
+According to Coulom and others, topping the world champion will be more challenging than topping Fan Hui. But Coulom is betting on DeepMind. He has spent the past decade trying to build a system capable of beating the world’s best players, and now, he believes that system is here. “I’m busy buying some GPUs,” he says.
+
+Go Forth
+The importance of AlphaGo is enormous. The same techniques could be applied not only to robotics and scientific research, but so many other tasks, from Siri-like mobile digital assistants to financial investments. “You can apply it to any adversarial problem—anything that you can conceive of as a game, where strategy matters,” says Chris Nicholson, founder of the deep learning startup Skymind. “That includes war or business or [financial] trading.”
+
+For some, that’s a worrying thing—especially when they consider that DeepMind’s system is, in more ways than one, teaching itself to play Go. The system isn’t just learning from data provided by humans. It’s learning by playing itself, by generating its own data. In recent months, Tesla founder Elon Musk and others have voiced concerns that such AI system eventually could exceed human intelligence and potentially break free from our control.
+
+But DeepMind’s system is very much under the control of Hassabis and his researchers. And though they used it to crack a remarkably complex game, it is still just a game. Indeed, AlphaGo is a long way from real human intelligence—much less superintelligence. “This is a highly structured situation,” says Ryan Calo, an AI-focused law professor and the founder of the Tech Policy Lab at the University of Washington. “It’s not really human-level understanding.” But it points in the direction. If DeepMind’s AI can understand Go, then maybe it can understand a whole lot more. “What if the universe,” Calo says, “is just a giant game of Go?”
+
+Go Back to Top. Skip To: Start of Article.

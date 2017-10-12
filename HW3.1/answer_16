@@ -1,0 +1,7 @@
+
+
+The RPS value vary due to the cache of each instance. There will be cache saved in the instance after each round, 
+therefore the RPS tends to increase compared to the beginning.
+
+The RPS value in t1.micro vary less significantly as in m3.large. As m3.large has a larger cache space than t1.miro, 
+it can save more data in the cache, making the RPS increase more significent.

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Initialize a new Spark Context.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sparkR.init {SparkR}"><tr><td>sparkR.init {SparkR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Initialize a new Spark Context.</h2>
+
+<h3>Description</h3>
+
+<p>This function initializes a new SparkContext.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sparkR.init(master = "", appName = "SparkR",
+  sparkHome = Sys.getenv("SPARK_HOME"), sparkEnvir = list(),
+  sparkExecutorEnv = list(), sparkJars = "", sparkPackages = "")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>master</code></td>
+<td>
+<p>The Spark master URL.</p>
+</td></tr>
+<tr valign="top"><td><code>appName</code></td>
+<td>
+<p>Application name to register with cluster manager</p>
+</td></tr>
+<tr valign="top"><td><code>sparkHome</code></td>
+<td>
+<p>Spark Home directory</p>
+</td></tr>
+<tr valign="top"><td><code>sparkEnvir</code></td>
+<td>
+<p>Named list of environment variables to set on worker nodes.</p>
+</td></tr>
+<tr valign="top"><td><code>sparkExecutorEnv</code></td>
+<td>
+<p>Named list of environment variables to be used when launching executors.</p>
+</td></tr>
+<tr valign="top"><td><code>sparkJars</code></td>
+<td>
+<p>Character string vector of jar files to pass to the worker nodes.</p>
+</td></tr>
+<tr valign="top"><td><code>sparkPackages</code></td>
+<td>
+<p>Character string vector of packages from spark-packages.org</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+sc &lt;- sparkR.init("local[2]", "SparkR", "/home/spark")
+sc &lt;- sparkR.init("local[2]", "SparkR", "/home/spark",
+                 list(spark.executor.memory="1g"))
+sc &lt;- sparkR.init("yarn-client", "SparkR", "/home/spark",
+                 list(spark.executor.memory="1g"),
+                 list(LD_LIBRARY_PATH="/directory of JVM libraries (libjvm.so) on workers/"),
+                 c("jarfile1.jar","jarfile2.jar"))
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SparkR</em> version 1.5.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
